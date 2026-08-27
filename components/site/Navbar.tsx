@@ -131,7 +131,7 @@ const allLoanItems = [
 ];
 
 const secondaryLinks = [
-  { label: 'Insights', href: '#insights' },
+  { label: 'Credits', href: '/credits' },
 ];
 
 function MegaMenuColumn({
@@ -291,13 +291,13 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Loans & Credit dropdown */}
+          {/* Loans dropdown */}
           <div
             onMouseEnter={handleLoansEnter}
             onMouseLeave={handleLoansLeave}
           >
             <button className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy">
-              Loans & Credit
+              Loans
               <ChevronDown
                 className={cn(
                   'h-3.5 w-3.5 transition-transform',
@@ -326,12 +326,12 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="rounded-full px-3.5 py-2 text-sm font-medium text-navy/80 transition-colors hover:bg-navy/5 hover:text-navy"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* CTA + mobile toggle */}
@@ -441,7 +441,7 @@ export default function Navbar() {
                   </AccordionItem>
                   <AccordionItem value="loans" className="border-b border-border">
                     <AccordionTrigger className="px-3 text-sm font-semibold text-navy hover:no-underline">
-                      Loans & Credit
+                      Loans
                     </AccordionTrigger>
                     <AccordionContent className="pb-2">
                       <ul className="space-y-1">
@@ -470,13 +470,13 @@ export default function Navbar() {
                       {l.label}
                     </a>
                   ))}
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/contact"
                     className="flex items-center gap-2 rounded-lg px-3 py-3 text-sm font-semibold text-navy hover:bg-secondary"
                   >
                     <Phone className="h-4 w-4 text-gold" />
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
                 <a
                   href={WHATSAPP_URL}

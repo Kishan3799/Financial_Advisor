@@ -18,13 +18,13 @@
 
 export type ContactFormData = {
   name: string;
-  email: string;
+  dob: string;
   phone: string;
   service: string;
   message: string;
 };
 
-export async function sendContactEmail(formData: ContactFormData): Promise<{
+export async function sendContactDob(formData: ContactFormData): Promise<{
   success: boolean;
   message: string;
 }> {
@@ -35,12 +35,11 @@ export async function sendContactEmail(formData: ContactFormData): Promise<{
     const { data, error } = await resend.emails.send({
       from: 'Choudhary Capital Crux <onboarding@resend.dev>', // TODO: replace with your verified domain
       to: 'hello@choudharycapitalcrux.com', // TODO: replace with the inbox you want enquiries to land in
-      replyTo: `${formData.name} <${formData.email}>`,
       subject: `New enquiry from ${formData.name} — ${formData.service}`,
       html: `
         <h2>New contact form submission</h2>
         <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Date of Birth:</strong> ${formData.dob}</p>
         <p><strong>Phone:</strong> ${formData.phone}</p>
         <p><strong>Service:</strong> ${formData.service}</p>
         <p><strong>Message:</strong></p>

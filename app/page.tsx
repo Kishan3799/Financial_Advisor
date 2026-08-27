@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ChevronDown,
@@ -31,6 +31,7 @@ import Footer from '@/components/site/Footer';
 import ContactForm from '@/components/site/ContactForm';
 import PartnerMarquee from '@/components/site/PartnerMarquee';
 import MeteorCard from '@/components/site/MeteorCard';
+import { insights } from '@/lib/insights-data';
 
 const WHATSAPP_QUOTE = 'https://wa.me/918750733329';
 const CALENDLY_URL =
@@ -41,7 +42,7 @@ const LOAN_WHATSAPP =
 const heroSlides = [
   {
     image:
-      'https://images.pexels.com/photos/8815888/pexels-photo-8815888.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      'https://images.pexels.com/photos/5119595/pexels-photo-5119595.jpeg?auto=compress&cs=tinysrgb&w=1920',
     headline: 'Get Your Life Insurance Quote Fast, Simple, Same Day',
     subtext:
       'Protect your family’s future with tailored coverage that fits your life and budget — approved the same day you apply.',
@@ -55,7 +56,7 @@ const heroSlides = [
   },
   {
     image:
-      'https://images.pexels.com/photos/8439737/pexels-photo-8439737.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      'https://img.magnific.com/premium-photo/indian-family-father-mother-son-daughter-holding-3d-paper-model-home-real-istate-concept-india_466689-8074.jpg?auto=compress&cs=tinysrgb&w=1920',
     headline: 'Your Family’s Security, Our Promise',
     subtext:
       '12+ years of trusted financial expertise guiding thousands of families toward lifelong financial confidence.',
@@ -108,24 +109,6 @@ const loanCards = [
   { icon: Wallet, title: 'Personal Loan', desc: 'Collateral-free funds for any personal need.' },
   { icon: Landmark, title: 'Loan Against Assets', desc: 'Unlock liquidity against property, gold or shares.' },
   { icon: CreditCard, title: 'Credit Card', desc: 'Compare premium cards with rewards that suit you.' },
-];
-
-const insights = [
-  {
-    date: 'Jul 28, 2026',
-    title: '5 SIP mistakes that quietly drain your returns',
-    img: 'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    date: 'Jul 14, 2026',
-    title: 'Term vs. whole life insurance: which do you need?',
-    img: 'https://images.pexels.com/photos/6863251/pexels-photo-6863251.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    date: 'Jun 30, 2026',
-    title: 'How much will your child’s education cost in 2035?',
-    img: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
 ];
 
 const stats = [
@@ -529,13 +512,13 @@ export default function Home() {
                   <h3 className="text-lg font-bold leading-snug text-navy">
                     {post.title}
                   </h3>
-                  <a
-                    href="#insights"
+                  <Link
+                    href={`/insights/${post.slug}`}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-dark transition-colors hover:text-gold"
                   >
                     Read More
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </article>
             ))}

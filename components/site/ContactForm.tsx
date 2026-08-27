@@ -5,7 +5,7 @@ import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { sendContactEmail } from '@/app/actions/contact';
+import { sendContactDob } from '@/app/actions/contact';
 
 const services = [
   'Life Insurance',
@@ -21,7 +21,7 @@ const services = [
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: '',
-    email: '',
+    dob: '',
     phone: '',
     service: services[0],
     message: '',
@@ -40,13 +40,13 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('idle');
     startTransition(async () => {
-      const result = await sendContactEmail(form);
+      const result = await sendContactDob(form);
       if (result.success) {
         setStatus('success');
         setStatusMessage(result.message);
         setForm({
           name: '',
-          email: '',
+          dob: '',
           phone: '',
           service: services[0],
           message: '',
@@ -59,7 +59,7 @@ export default function ContactForm() {
   }
 
   const fieldClass =
-    'w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-colors';
+    'block w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 transition-colors [&::-webkit-calendar-picker-indicator]:ml-auto';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -97,17 +97,16 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-sm font-semibold text-navy">
-            Email Address
+          <Label htmlFor="dob" className="text-sm font-semibold text-navy">
+            Date of Birth
           </Label>
           <Input
-            id="email"
-            name="email"
-            type="email"
+            id="dob"
+            name="dob"
+            type="date"
             required
-            value={form.email}
+            value={form.dob}
             onChange={handleChange}
-            placeholder="you@example.com"
             className={fieldClass}
           />
         </div>

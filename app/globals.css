@@ -91,7 +91,7 @@
     mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   }
   .hero-gradient {
-    background: linear-gradient(105deg, rgba(10, 25, 47, 0.92) 0%, rgba(10, 25, 47, 0.78) 38%, rgba(10, 25, 47, 0.4) 70%, rgba(10, 25, 47, 0.15) 100%);
+    background: linear-gradient(105deg, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 0.7) 38%, rgba(10, 25, 47, 0.4) 70%, rgba(10, 25, 47, 0.15) 100%);
   }
 }
 

@@ -155,7 +155,7 @@ export default function LoanDetailPage({
               Why Choose Us
             </span>
             <h2 className="mt-5 text-3xl font-bold text-navy">
-              Why Choose RBM for Your {plan.title} Needs?
+              Why Choose Chaudhary Capital Crux for Your {plan.title} Needs?
             </h2>
             <ul className="mt-6 space-y-3">
               {plan.whyChoose.map((f) => (

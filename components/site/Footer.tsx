@@ -24,8 +24,8 @@ const footerLinks = {
   Company: [
     { label: 'About Us', href: '#about' },
     { label: 'Our Partners', href: '#partners' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'Contact Us', href: '#contact' },
+    { label: 'Credits', href: '/credits' },
+    { label: 'Contact Us', href: '/contact' },
   ],
   Tools: [
     { label: 'SIP Calculator', href: '/calculator/sipcalculator' },
@@ -35,11 +35,41 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { 
+    icon: Facebook, 
+    href: 'https://www.facebook.com/profile.php?id=61578741775478', 
+    label: 'Facebook',
+    bgClass: 'bg-[#1877f2]',
+    shadowClass: 'shadow-[0_0_15px_rgba(24,119,242,0.4)] hover:shadow-[0_0_20px_rgba(24,119,242,0.8)]'
+  },
+  { 
+    icon: Twitter, 
+    href: 'https://x.com/C_capitalcrux', 
+    label: 'Twitter',
+    bgClass: 'bg-black',
+    shadowClass: 'shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]'
+  },
+  { 
+    icon: Linkedin, 
+    href: 'https://www.linkedin.com/in/avinash-choudhary-8b2840375/', 
+    label: 'LinkedIn',
+    bgClass: 'bg-[#0077b5]',
+    shadowClass: 'shadow-[0_0_15px_rgba(0,119,181,0.4)] hover:shadow-[0_0_20px_rgba(0,119,181,0.8)]'
+  },
+  { 
+    icon: Instagram, 
+    href: 'https://www.instagram.com/c_capitalcrux/', 
+    label: 'Instagram',
+    bgClass: 'bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]',
+    shadowClass: 'shadow-[0_0_15px_rgba(238,42,123,0.4)] hover:shadow-[0_0_20px_rgba(238,42,123,0.8)]'
+  },
+  { 
+    icon: Youtube, 
+    href: 'https://www.youtube.com/@Choudhary.CapitalCrux', 
+    label: 'YouTube',
+    bgClass: 'bg-[#ff0000]',
+    shadowClass: 'shadow-[0_0_15px_rgba(255,0,0,0.4)] hover:shadow-[0_0_20px_rgba(255,0,0,0.8)]'
+  },
 ];
 
 export default function Footer() {
@@ -133,15 +163,16 @@ export default function Footer() {
             reserved. Mutual fund investments are subject to market risks. Please
             read the scheme documents carefully before investing.
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {socials.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
+                target='_blank'
                 aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-gold hover:text-navy"
+                className={`group relative flex h-9 w-9 items-center justify-center rounded-full text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:rounded-[10px] ${s.bgClass} ${s.shadowClass}`}
               >
-                <s.icon className="h-4 w-4" />
+                <s.icon className="h-4 w-4 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12" />
               </a>
             ))}
           </div>

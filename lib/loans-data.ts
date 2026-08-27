@@ -61,7 +61,7 @@ export const loanPlans: Record<string, LoanPlan> = {
       'Flexible Repayment Options: We understand the diverse financial needs of businesses. Our flexible repayment plans are tailored to suit your cash flow and business cycle.',
       'Competitive Interest Rates: With competitive interest rates, we ensure that your loan is affordable and does not burden your business finances.',
       'Quick Approval Process: Time is crucial for businesses. Our streamlined approval process ensures quick decisions on your loan application, so you can seize opportunities without delay.',
-      'No Hidden Charges: Transparency is our commitment. We believe in clear communication, and there are no hidden charges or surprises when you choose RBM for your business loan.',
+      'No Hidden Charges: Transparency is our commitment. We believe in clear communication, and there are no hidden charges or surprises when you choose CCCRUX for your business loan.',
     ],
     eligibility: [
       'Business Type: Sole proprietorship, partnership, or registered company',
