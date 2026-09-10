@@ -162,7 +162,7 @@ export default function ContactPage() {
               <div className="mt-4 pt-4 border-t border-navy/10">
                 <div className="relative border-l-4 border-gold pl-4 py-1">
                   <h3 className="text-base font-bold text-navy leading-relaxed">
-                    Follow <span className="text-gold">Avinash Kumar Choudhary</span> on his social channels for powerful insights, strategies, and inspiration.
+                    Follow <span className="text-gold">Choudhary Capital Crux</span> on his social channels for powerful insights, strategies, and inspiration.
                   </h3>
                 </div>
                 <div className="mt-6 flex flex-wrap items-center gap-3.5">
@@ -183,14 +183,14 @@ export default function ContactPage() {
                     },
                     {
                       icon: Linkedin,
-                      href: 'https://www.linkedin.com/in/avinash-choudhary-8b2840375/',
+                      href: 'https://www.linkedin.com/in/choudhary-capital-crux-8b2840375?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
                       label: 'LinkedIn',
                       bgClass: 'bg-[#0077b5]',
                       shadowClass: 'shadow-[0_8px_20px_-4px_rgba(0,119,181,0.45)] hover:shadow-[0_12px_24px_-4px_rgba(0,119,181,0.65)]',
                     },
                     {
                       icon: Facebook,
-                      href: 'https://www.facebook.com/profile.php?id=61578741775478',
+                      href: 'https://www.facebook.com/share/1D7WC1A52y/?mibextid=wwXIfr',
                       label: 'Facebook',
                       bgClass: 'bg-[#1877f2]',
                       shadowClass: 'shadow-[0_8px_20px_-4px_rgba(24,119,242,0.45)] hover:shadow-[0_12px_24px_-4px_rgba(24,119,242,0.65)]',

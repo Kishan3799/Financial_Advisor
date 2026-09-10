@@ -11,12 +11,15 @@ import {
   Award,
   Users,
   TrendingUp,
+  Trophy,
+  Medal,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Navbar from '@/components/site/Navbar';
 import Footer from '@/components/site/Footer';
 import ContactForm from '@/components/site/ContactForm';
 import InvestmentMarquee from '@/components/site/InvestmentMarquee';
+import SafeHeroImage from '@/components/site/SafeHeroImage';
 
 const WHATSAPP_URL = 'https://wa.me/918750733329';
 
@@ -33,13 +36,11 @@ export type InvestmentPlan = {
 };
 
 const stats = [
-  { icon: Users, value: '1,500+', label: 'Investors Guided' },
-  { icon: Award, value: '12+', label: 'Years of Expertise' },
-  { icon: TrendingUp, value: '₹500Cr+', label: 'Assets Managed' },
-  { icon: ShieldCheck, value: '100%', label: 'Secure Planning' },
+  { icon: Trophy, value: 'MDRT, USA', label: 'Achiever / Member', gradient: 'from-amber-400 to-yellow-500', glow: 'shadow-[0_0_18px_rgba(251,191,36,0.5)]', textColor: 'text-amber-600' },
+  { icon: Award, value: '12+', label: 'Years of Expertise', gradient: 'from-blue-500 to-indigo-600', glow: 'shadow-[0_0_18px_rgba(99,102,241,0.45)]', textColor: 'text-indigo-600' },
+  { icon: Medal, value: 'Gold Medalist', label: 'LIC of India Recognition', gradient: 'from-yellow-400 to-orange-500', glow: 'shadow-[0_0_18px_rgba(249,115,22,0.45)]', textColor: 'text-orange-600' },
+  { icon: ShieldCheck, value: '100%', label: 'Secure Planning', gradient: 'from-emerald-400 to-teal-500', glow: 'shadow-[0_0_18px_rgba(20,184,166,0.45)]', textColor: 'text-teal-600' },
 ];
-
-
 
 export default function InvestmentDetailPage({
   plan,
@@ -55,9 +56,9 @@ export default function InvestmentDetailPage({
       {/* Hero */}
       <section className="relative flex min-h-[520px] items-end overflow-hidden bg-navy pt-28">
         <div className="absolute inset-0">
-          <img
+          <SafeHeroImage
             src={plan.heroImage}
-            alt=""
+            alt={plan.title}
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/30" />
@@ -105,16 +106,22 @@ export default function InvestmentDetailPage({
       </section>
 
       {/* Stats strip */}
-      <section className="border-b border-border bg-white py-8">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 md:grid-cols-4">
+      <section className="border-b border-border bg-white py-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-5 px-6 md:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy/5 text-navy">
-                <s.icon className="h-5 w-5" />
+            <div
+              key={s.label}
+              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-border bg-white p-4 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span
+                className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${s.gradient} ${s.glow} text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
+              >
+                <s.icon className="h-6 w-6 drop-shadow-sm" />
               </span>
               <div>
-                <p className="text-xl font-bold text-navy">{s.value}</p>
-                <p className="text-xs text-muted-foreground">{s.label}</p>
+                <p className={`text-xl font-extrabold ${s.textColor} leading-tight`}>{s.value}</p>
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">{s.label}</p>
               </div>
             </div>
           ))}

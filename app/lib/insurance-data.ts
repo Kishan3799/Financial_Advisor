@@ -26,8 +26,7 @@ export const insurancePlans: Record<string, InsurancePlan> = {
     icon: Shield,
     tagline:
       'Ensure your family\u2019s financial security and lifestyle never depends on a single income.',
-    heroImage:
-      'https://images.pexels.com/photos/8815888/pexels-photo-8815888.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    heroImage: '/images/life-insurance-hero.jpg',
     overview:
       'A Life Insurance Plan pays a lump-sum benefit to your nominees if something happens to you, replacing lost income so your family can maintain their lifestyle, repay loans, and fund future goals like education and marriage. It is the foundation of every sound financial plan.',
     features: [
@@ -157,7 +156,7 @@ export const insurancePlans: Record<string, InsurancePlan> = {
     tagline:
       'Financial support for you and your family if an accident causes injury, disability, or worse.',
     heroImage:
-      'https://images.pexels.com/photos/7095534/pexels-photo-7095534.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      'https://img.magnific.com/premium-photo/insurance-agent-writing-clipboard-report-car-accident_926199-2678157.jpg?semt=ais_hybrid&w=740&q=80',
     overview:
       'Personal Accident Insurance provides a lump-sum payout if an accident results in death, permanent total disability, or permanent partial disability. It also covers temporary total disability with a weekly income benefit \u2014 protecting your earnings when you cannot work.',
     features: [
@@ -208,8 +207,7 @@ export const insurancePlans: Record<string, InsurancePlan> = {
     icon: Flame,
     tagline:
       'Safeguard your property and assets from fire, explosion, and allied perils.',
-    heroImage:
-      'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    heroImage: '/images/fire-insurance-hero.jpg',
     overview:
       'Fire Insurance covers loss or damage to buildings, plant, machinery, stock, and contents caused by fire, lightning, explosion, and allied perils like storm, flood, and impact damage. It is the core protection for any commercial or residential property.',
     features: [

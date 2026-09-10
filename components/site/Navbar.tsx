@@ -228,8 +228,13 @@ export default function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-navy text-gold">
             <Shield className="h-5 w-5" />
           </span>
-          <span className="hidden text-[19px] font-bold leading-tight text-navy sm:block">
-            Choudhary<span className="text-gold"> Capital Crux</span>
+          <span className="hidden flex-col leading-tight sm:flex">
+            <span className="text-[16px] font-extrabold uppercase text-navy">
+              Choudhary <span className="text-gold">Capital Crux</span>
+            </span>
+            <span className="text-[12.5px] font-medium tracking-wide text-navy/70 mt-0.5" style={{ textAlign: "center" }}>
+              Aapka Bharosa, Hamari Zimmedari
+            </span>
           </span>
         </Link>
 
@@ -358,20 +363,26 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[88%] max-w-sm border-l-0 bg-white p-0"
+              className="flex h-full flex-col w-[88%] max-w-sm border-l-0 bg-white p-0"
             >
               <SheetTitle className="sr-only">Navigation</SheetTitle>
-              <div className="flex items-center justify-between border-b border-border px-5 py-4">
-                <span className="text-base font-bold text-navy">
-                  Choudhary<span className="text-gold"> Capital Crux</span>
+              <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
+                <span className="flex flex-col leading-none">
+                  <span className="text-[13px] font-extrabold uppercase tracking-wide text-navy">
+                    Choudhary <span className="text-gold">Capital Crux</span>
+                  </span>
+                  <span className="text-[9.5px] font-medium tracking-wide text-navy/50 mt-0.5">
+                    Aapka Bharosa, Hamari Zimmedari
+                  </span>
                 </span>
                 <SheetClose asChild>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary">
-                    <X className="h-4 w-4 text-navy" />
-                  </span>
+                  <button className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-navy hover:bg-secondary/80">
+                    <X className="h-4 w-4" />
+                  </button>
                 </SheetClose>
               </div>
-              <div className="overflow-y-auto px-5 py-4">
+
+              <div className="flex-1 min-h-0 overflow-y-auto px-5 py-4">
                 <Accordion type="multiple" className="w-full">
                   <Link
                     href="/about"
@@ -379,87 +390,179 @@ export default function Navbar() {
                   >
                     About Us
                   </Link>
-                  <AccordionItem value="life" className="border-b border-border">
+
+                  {/* Insurance */}
+                  <AccordionItem value="insurance" className="border-b border-border">
                     <AccordionTrigger className="px-3 text-sm font-semibold text-navy hover:no-underline">
                       Insurance
                     </AccordionTrigger>
-                    <AccordionContent className="pb-2">
-                      <ul className="space-y-1">
-                        {lifeInsuranceItems.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              href={item.href}
-                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-navy/80 hover:bg-secondary"
-                            >
-                              <item.icon className="h-4 w-4 shrink-0 text-gold" />
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    <AccordionContent className="pb-3 space-y-4">
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Personal Protection
+                        </p>
+                        <ul className="space-y-1">
+                          {personalInsuranceItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Property & Vehicles
+                        </p>
+                        <ul className="space-y-1">
+                          {propertyInsuranceItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Business Coverage
+                        </p>
+                        <ul className="space-y-1">
+                          {businessInsuranceItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="marketLinked" className="border-b border-border">
+
+                  {/* Investments */}
+                  <AccordionItem value="investments" className="border-b border-border">
                     <AccordionTrigger className="px-3 text-sm font-semibold text-navy hover:no-underline">
-                      Market Linked Investments
+                      Investments
                     </AccordionTrigger>
-                    <AccordionContent className="pb-2">
-                      <ul className="space-y-1">
-                        {marketLinkedItems.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              href={item.href}
-                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-navy/80 hover:bg-secondary"
-                            >
-                              <item.icon className="h-4 w-4 shrink-0 text-gold" />
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    <AccordionContent className="pb-3 space-y-4">
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Market Linked
+                        </p>
+                        <ul className="space-y-1">
+                          {marketLinkedItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Fixed Income & Bonds
+                        </p>
+                        <ul className="space-y-1">
+                          {fixedIncomeItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="fixedIncome" className="border-b border-border">
-                    <AccordionTrigger className="px-3 text-sm font-semibold text-navy hover:no-underline">
-                      Fixed Income & Bonds
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-2">
-                      <ul className="space-y-1">
-                        {fixedIncomeItems.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              href={item.href}
-                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-navy/80 hover:bg-secondary"
-                            >
-                              <item.icon className="h-4 w-4 shrink-0 text-gold" />
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
+
+                  {/* Loans */}
                   <AccordionItem value="loans" className="border-b border-border">
                     <AccordionTrigger className="px-3 text-sm font-semibold text-navy hover:no-underline">
                       Loans
                     </AccordionTrigger>
-                    <AccordionContent className="pb-2">
-                      <ul className="space-y-1">
-                        {allLoanItems.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              href={item.href}
-                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-navy/80 hover:bg-secondary"
-                            >
-                              <item.icon className="h-4 w-4 shrink-0 text-gold" />
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    <AccordionContent className="pb-3 space-y-4">
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Retail Loans
+                        </p>
+                        <ul className="space-y-1">
+                          {retailLoanItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Vehicle Financing
+                        </p>
+                        <ul className="space-y-1">
+                          {vehicleLoanItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="px-3 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-gold">
+                          Business & Assets
+                        </p>
+                        <ul className="space-y-1">
+                          {businessAssetLoanItems.map((item) => (
+                            <li key={item.label}>
+                              <Link
+                                href={item.href}
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-navy/80 hover:bg-secondary"
+                              >
+                                <item.icon className="h-4 w-4 shrink-0 text-gold" />
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
+
                 <div className="mt-2 space-y-1">
                   {secondaryLinks.map((l) => (
                     <a
@@ -482,7 +585,7 @@ export default function Navbar() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 flex items-center justify-center gap-2 rounded-full bg-gold px-4 py-3 text-sm font-bold text-navy shadow-gold"
+                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-gold px-4 py-3 text-sm font-bold text-navy shadow-gold"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Get a Free Quote

@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import ScanAndApplyFloatingButton from '@/components/site/ScanAndApplyFloatingButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,6 +29,17 @@ export const metadata: Metadata = {
       'Protect your family, grow your wealth, and secure your tomorrow with 12+ years of trusted financial expertise.',
     type: 'website',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -37,7 +49,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <ScanAndApplyFloatingButton />
+      </body>
     </html>
   );
 }

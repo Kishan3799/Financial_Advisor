@@ -37,7 +37,7 @@ const footerLinks = {
 const socials = [
   { 
     icon: Facebook, 
-    href: 'https://www.facebook.com/profile.php?id=61578741775478', 
+    href: 'https://www.facebook.com/share/1D7WC1A52y/?mibextid=wwXIfr', 
     label: 'Facebook',
     bgClass: 'bg-[#1877f2]',
     shadowClass: 'shadow-[0_0_15px_rgba(24,119,242,0.4)] hover:shadow-[0_0_20px_rgba(24,119,242,0.8)]'
@@ -51,7 +51,7 @@ const socials = [
   },
   { 
     icon: Linkedin, 
-    href: 'https://www.linkedin.com/in/avinash-choudhary-8b2840375/', 
+    href: 'https://www.linkedin.com/in/choudhary-capital-crux-8b2840375?utm_source=share_via&utm_content=profile&utm_medium=member_ios', 
     label: 'LinkedIn',
     bgClass: 'bg-[#0077b5]',
     shadowClass: 'shadow-[0_0_15px_rgba(0,119,181,0.4)] hover:shadow-[0_0_20px_rgba(0,119,181,0.8)]'

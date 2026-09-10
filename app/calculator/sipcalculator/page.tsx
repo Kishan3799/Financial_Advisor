@@ -147,14 +147,32 @@ export default function SIPCalculatorPage() {
               <Share2 className="mr-1.5 inline h-3.5 w-3.5" />
               Share
             </span>
-            {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+            {[
+              {
+                name: 'Facebook',
+                icon: Facebook,
+                href: 'https://www.facebook.com/share/1D7WC1A52y/?mibextid=wwXIfr',
+              },
+              {
+                name: 'Twitter',
+                icon: Twitter,
+                href: 'https://x.com/C_capitalcrux',
+              },
+              {
+                name: 'LinkedIn',
+                icon: Linkedin,
+                href: 'https://www.linkedin.com/in/choudhary-capital-crux-8b2840375?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
+              },
+            ].map((social) => (
               <a
-                key={i}
-                href="#"
-                aria-label="Share"
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Share on ${social.name}`}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-all hover:bg-gold hover:text-navy"
               >
-                <Icon className="h-4 w-4" />
+                <social.icon className="h-4 w-4" />
               </a>
             ))}
           </div>
@@ -183,7 +201,7 @@ export default function SIPCalculatorPage() {
                     <div className="flex items-center rounded-lg border border-navy/15 bg-secondary/50 px-3 py-1.5">
                       <IndianRupee className="h-3.5 w-3.5 text-navy/50" />
                       <input
-                        type="number"
+                        type="text"
                         value={monthly}
                         min={500}
                         step={500}
