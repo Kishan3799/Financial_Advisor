@@ -107,7 +107,7 @@ const investmentCards = [
 ];
 
 const loanCards = [
-  { icon: HomeIcon, title: 'Home Loan', desc: 'Competitive rates from 8.4%* p.a. with quick approval.' },
+  { icon: HomeIcon, title: 'Home Loan', desc: 'Competitive rates with quick approval.' },
   { icon: Repeat, title: 'Balance Transfer', desc: 'Switch lenders and lower your EMI burden instantly.' },
   { icon: Building2, title: 'Business Loan', desc: 'Unsecured working capital up to ₹50 lakh, fast-track.' },
   { icon: Wallet, title: 'Personal Loan', desc: 'Collateral-free funds for any personal need.' },
@@ -557,7 +557,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div 
+          <div
             className="relative mt-14 sm:mt-18 flex h-[400px] sm:h-[420px] w-full items-center justify-center overflow-hidden sm:overflow-visible"
             onMouseEnter={() => setIsTestiHovered(true)}
             onMouseLeave={() => setIsTestiHovered(false)}
@@ -565,7 +565,7 @@ export default function Home() {
             {testimonials.map((testimonial, idx) => {
               const diff = (idx - testiIndex + testimonials.length) % testimonials.length;
               let positionClass = "";
-              
+
               if (diff === 0) {
                 // Center
                 positionClass = "translate-x-0 scale-100 opacity-100 z-30 shadow-2xl";
@@ -584,8 +584,8 @@ export default function Home() {
               }
 
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   onClick={() => {
                     if (diff !== 0) setTestiIndex(idx);
                   }}
@@ -595,21 +595,21 @@ export default function Home() {
                     <div className="absolute -top-5 right-8 rounded-full bg-gradient-to-br from-gold to-gold-dark p-3 text-navy shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
                       <Quote className="h-5 w-5 fill-navy" />
                     </div>
-                    
+
                     <div className="flex items-center gap-1 mb-5">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-gold text-gold drop-shadow-sm" />
                       ))}
                     </div>
-                    
+
                     <p className="mb-6 text-sm sm:text-base leading-relaxed text-white/90 font-light flex-grow">
                       "{testimonial.content}"
                     </p>
-                    
+
                     <div className="mt-auto flex items-center gap-4 border-t border-white/10 pt-5">
                       <div className="relative">
-                        <img 
-                          src={testimonial.image} 
+                        <img
+                          src={testimonial.image}
                           alt={testimonial.name}
                           className="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-gold/30 transition-all duration-300 group-hover:ring-gold"
                         />
@@ -631,11 +631,10 @@ export default function Home() {
               <button
                 key={dotIdx}
                 onClick={() => setTestiIndex(dotIdx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  dotIdx === testiIndex
+                className={`h-2 rounded-full transition-all duration-300 ${dotIdx === testiIndex
                     ? 'w-7 bg-gold'
                     : 'w-2 bg-white/30 hover:bg-white/50'
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${dotIdx + 1}`}
               />
             ))}
