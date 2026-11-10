@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Analytics } from "@vercel/analytics/next"
 import {
   ChevronDown,
   ChevronRight,
@@ -750,6 +751,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <Analytics />
     </>
   );
 }
