@@ -554,7 +554,7 @@ export default function Home() {
               What our Customers are saying
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/70">
-              Don't just take our word for it. Hear from families and businesses who have secured their financial future with us.
+              Don&apos;t just take our word for it. Hear from families and businesses who have secured their financial future with us.
             </p>
           </div>
 
@@ -604,7 +604,7 @@ export default function Home() {
                     </div>
 
                     <p className="mb-6 text-sm sm:text-base leading-relaxed text-white/90 font-light flex-grow">
-                      "{testimonial.content}"
+                      {testimonial.content}
                     </p>
 
                     <div className="mt-auto flex items-center gap-4 border-t border-white/10 pt-5">
